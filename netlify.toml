@@ -1,6 +1,26 @@
 [build]
-  command = "hugo"
+  # 增加了压缩和清理命令，提升访问速度
+  command = "hugo --gc --minify"
   publish = "public"
 
 [build.environment]
+  # 保持你原来的版本号（新版通常更好）
   HUGO_VERSION = "0.152.2"
+  # 建议设置时区，避免文章发布时间错乱
+  TZ = "Asia/Shanghai"
+
+# (可选) 这是一个通用的缓存优化配置，可以让浏览器缓存静态资源，进一步提速
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

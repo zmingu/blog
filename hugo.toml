@@ -1437,9 +1437,9 @@ commentCount = true # 是否统计评论数
 # FixIt 0.2.16 | CHANGED Waline comment config (Waline 评论，Valine 的升级版，功能最强)
 # https://waline.js.org
 [params.page.comment.waline]
-enable = false   # 是否开启 Waline (强烈推荐国内用户使用)
-serverURL = ""   # Waline 服务端地址 (通常部署在 Vercel)
-pageview = false # 是否开启页面浏览量统计
+enable = true   # 是否开启 Waline (强烈推荐国内用户使用)
+serverURL = "https://waline.zmingu.com"   # Waline 服务端地址 (通常部署在 Vercel)
+pageview = true # 是否开启页面浏览量统计
 emoji = [ "//unpkg.com/@waline/emojis@1.1.0/weibo" ] # 表情包预设
 meta = ["nick", "mail", "link"] # 评论者信息字段
 requiredMeta = [] # 必填字段
@@ -1447,13 +1447,13 @@ login = "enable" # 登录模式 ["enable"(开启), "disable"(关闭), "force"(�
 wordLimit = 0    # 字数限制
 pageSize = 10    # 每页显示条数
 imageUploader = false # 是否开启图片上传
-highlighter = false # 是否开启代码高亮
-comment = false  # 是否显示评论数统计
+highlighter = true # 是否开启代码高亮
+comment = true  # 是否显示评论数统计
 texRenderer = false # 是否开启数学公式渲染
 search = false   # 是否允许搜索评论
 recaptchaV3Key = "" # Google reCAPTCHA v3 Key
 turnstileKey = "" # Cloudflare Turnstile Key (人机验证)
-reaction = false # 是否开启表情互动 (类似 GitHub 的 reaction)
+reaction = true # 是否开启表情互动 (类似 GitHub 的 reaction)
 
 # Facebook comment config (Facebook 评论插件)
 [params.page.comment.facebook]
