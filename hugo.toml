@@ -1363,7 +1363,7 @@ Mix = false
 
 # FixIt 0.2.15 | CHANGED Comment config (评论系统配置)
 [params.page.comment]
-enable = false   # 是否开启评论系统 (注意：具体的评论服务提供商需要在下方配置)
+enable = true   # 是否开启评论系统 (注意：具体的评论服务提供商需要在下方配置)
 
 # FixIt 0.2.13 | NEW Artalk comment config (Artalk 评论系统，需自建后端)
 # https://artalk.js.org/
