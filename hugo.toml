@@ -1437,7 +1437,7 @@ commentCount = true # 是否统计评论数
 # FixIt 0.2.16 | CHANGED Waline comment config (Waline 评论，Valine 的升级版，功能最强)
 # https://waline.js.org
 [params.page.comment.waline]
-enable = true   # 是否开启 Waline (强烈推荐国内用户使用)
+enable = true  # 是否开启 Waline (强烈推荐国内用户使用)
 serverURL = "https://waline.zmingu.com"   # Waline 服务端地址 (通常部署在 Vercel)
 pageview = true # 是否开启页面浏览量统计
 emoji = [ "//unpkg.com/@waline/emojis@1.1.0/weibo" ] # 表情包预设
