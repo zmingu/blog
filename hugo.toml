@@ -13,7 +13,7 @@
 # 网站标题
 title = "振明的博客"
 # 根目录的主机名（和路径）
-baseURL = "https://blog-zmingu.netlify.app"
+baseURL = "https://blog.zmingu.com"
 # 主题列表
 theme = ["FixIt"] # 在您的站点配置文件中启用
 # 确定默认内容语言 ["en", "zh-cn", "fr", "pl", ...],设置站点的默认语言代码，用于多语言支持和内容渲染。
@@ -912,7 +912,7 @@ pageViews = true # 是否在文章标题下方显示单篇阅读量
 
 # 各大搜索引擎站长验证配置 Google/Bing/Yandex/Pinterest/Baidu/360/Sogou
 [params.verification]
-google = ""      # Google Search Console 验证码 (meta 标签 content 里的值)
+google = "hFCpSpo_q4f6gjMJKLjgPpdaVIc8n08YKsRUvej7870"      # Google Search Console 验证码 (meta 标签 content 里的值)
 bing = ""        # Bing 必应站长验证码
 yandex = ""      # Yandex 验证码
 pinterest = ""   # Pinterest 验证码
@@ -929,7 +929,7 @@ thumbnailUrl = "" # 缩略图 URL (通常留空，自动生成)
 [params.analytics]
 enable = false   # 是否开启分析统计 (填好下方 ID 后记得改为 true)
 
-# (谷歌分析 GA4
+# 谷歌分析 GA4
 [params.analytics.google]
 id = ""          # 衡量 ID (格式通常为 G-XXXXXXXXXX)
 anonymizeIP = true # 是否匿名化 IP (GDPR 要求，建议 true)
@@ -941,7 +941,7 @@ server = ""      # 如果是自托管 Fathom，填服务器地址
 
 # 百度统计
 [params.analytics.baidu]
-id = ""          # 百度统计 ID (注意：只填 hm.js? 后面那串字符，不是整段脚本)
+id = "83a3dc18dcc0b339e59df9d63271e03a"          # 百度统计 ID (注意：只填 hm.js? 后面那串字符，不是整段脚本)
 
 # 开源、隐私友好的统计 Umami
 [params.analytics.umami]
