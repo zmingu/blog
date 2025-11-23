@@ -927,7 +927,7 @@ thumbnailUrl = "" # 缩略图 URL (通常留空，自动生成)
 
 # 网站流量分析配置
 [params.analytics]
-enable = false   # 是否开启分析统计 (填好下方 ID 后记得改为 true)
+enable = true   # 是否开启分析统计 (填好下方 ID 后记得改为 true)
 
 # 谷歌分析 GA4
 [params.analytics.google]
