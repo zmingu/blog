@@ -1,3 +1,7 @@
-/* 1. 引入霞鹜文楷 (LXGW WenKai) 字体文件 */
+/* 全文字体 - 霞鹜文楷 */
 @import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/style.css');
 $global-font-family: 'LXGW WenKai Screen', $global-font-family;
+
+/* 代码字体 - Fira Mono */
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap&subset=latin-ext');
+$code-font-family: Fira Mono, $code-font-family;

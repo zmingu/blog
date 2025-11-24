@@ -6,38 +6,38 @@
 # =====================================================================================
 
 # -------------------------------------------------------------------------------------
-# Hugo Configuration
+# Hugo Configuration (Hugo配置)
 # See: https://gohugo.io/getting-started/configuration/
 # -------------------------------------------------------------------------------------
+title = "振明的博客"# 网站标题
 
-# 网站标题
-title = "振明的博客"
-# 根目录的主机名（和路径）
-baseURL = "https://blog.zmingu.com"
-# 主题列表
-theme = ["FixIt"] # 在您的站点配置文件中启用
-# 确定默认内容语言 ["en", "zh-cn", "fr", "pl", ...],设置站点的默认语言代码，用于多语言支持和内容渲染。
-defaultContentLanguage = "zh-cn"
-# 语言代码 ["en", "zh-CN", "fr", "pl", ...],站点语言的 ISO 代码，与 defaultContentLanguage 类似，但更精确用于元标签和 i18n（国际化）。
-languageCode = "zh-CN"
-# 语言名称 ["English", "简体中文", "Français", "Polski", ...],语言的友好名称，用于显示在语言切换器或元数据中。
-languageName = "简体中文"
-# 是否包含中文/日文/韩文,启用对 CJK（中文、日文、韩文）字符的特殊处理，如断词和排版优化。设置为 true 时，Hugo 会加载相关库，提高东亚语言渲染质量。
-hasCJKLanguage = true
-# 仅用于 SEO 模式的版权描述,版权声明文本，仅用于结构化数据（Schema.org），不会直接显示在页面上。
-copyright = "© 2025 Zmingu. All rights reserved."
-# 是否使用 robots.txt,启用生成 robots.txt 文件，用于搜索引擎爬虫控制（如允许/禁止索引页面）。
-enableRobotsTXT = true
-# 是否使用 Git 提交日志,启用 Git 信息集成，如在页面中显示最后修改时间（基于 commit）。需要站点仓库是 Git 管理的。设置为 true 时，提升内容时效性显示。当前已启用，推荐保持。
-enableGitInfo = true
-# 是否使用表情符号代码，允许 Hugo 解析和渲染 Emoji（如 :smile: 转为 😊）。设置为 true 时，支持 Markdown 中的 Emoji 短码。当前已启用，几乎所有现代站点都推荐。
-enableEmoji = true
+baseURL = "https://blog.zmingu.com"# 根目录的主机名（和路径）
+
+theme = ["FixIt"] # 主题列表
+
+defaultContentLanguage = "zh-cn" # 确定默认内容语言 ["en", "zh-cn", "fr", "pl", ...],设置站点的默认语言代码，用于多语言支持和内容渲染。
+
+languageCode = "zh-CN" # 语言代码 ["en", "zh-CN", "fr", "pl", ...],站点语言的 ISO 代码，与 defaultContentLanguage 类似，但更精确用于元标签和 i18n（国际化）。
+
+
+languageName = "简体中文" # 语言名称 ["English", "简体中文", "Français", "Polski", ...],语言的友好名称，用于显示在语言切换器或元数据中。
+
+hasCJKLanguage = true # 是否包含中文/日文/韩文,启用对 CJK（中文、日文、韩文）字符的特殊处理，如断词和排版优化。设置为 true 时，Hugo 会加载相关库，提高东亚语言渲染质量。
+
+copyright = "© 2025 Zmingu. All rights reserved." # 仅用于 SEO 模式的版权描述,版权声明文本，仅用于结构化数据（Schema.org），不会直接显示在页面上。
+
+enableRobotsTXT = true # 是否使用 robots.txt,启用生成 robots.txt 文件，用于搜索引擎爬虫控制（如允许/禁止索引页面）。
+
+enableGitInfo = true # 是否使用 Git 提交日志,启用 Git 信息集成，如在页面中显示最后修改时间（基于 commit）。需要站点仓库是 Git 管理的。设置为 true 时，提升内容时效性显示。当前已启用，推荐保持。
+
+enableEmoji = true # 是否使用表情符号代码，允许 Hugo 解析和渲染 Emoji（如 :smile: 转为 😊）。设置为 true 时，支持 Markdown 中的 Emoji 短码。当前已启用，几乎所有现代站点都推荐。
+
 # 站点的主要部分，如果设置，Site 对象的 MainSections 方法将返回指定的部分；否则，返回页面最多的部分。
 # 定义站点的“主要”内容部分（如 "posts" 为博客文章目录），用于 RSS、归档页等。当前被注释掉（#），Hugo 会自动选择页面最多的 section（如 content/posts）。如果您的博客有多个部分，取消注释并指定如 mainSections = ["posts", "projects"]。
 # mainSections = ["posts"]
 
 # -------------------------------------------------------------------------------------
-# Menu Configuration
+# Menu Configuration (菜单配置)
 # See: https://fixit.lruihao.cn/documentation/basics/#menu-configuration
 # -------------------------------------------------------------------------------------
 [[menu.main]]
@@ -45,7 +45,7 @@ identifier = "Home"
 parent = ""
 pre = ""
 post = ""
-name = "首页"
+name = "主页"
 url = "/"
 title = ""
 weight = 1
@@ -108,7 +108,7 @@ weight = 4
 icon = "fa-solid fa-tags"
 
 # -------------------------------------------------------------------------------------
-# Related content Configuration
+# Related content Configuration (相关内容配置)
 # See: https://gohugo.io/content-management/related/
 # -------------------------------------------------------------------------------------
 
@@ -541,7 +541,7 @@ noFavicon = false
 # 现代 SVG 格式的 favicon，用于替代旧的 .png 和 .ico
 # 如果你有 svg 格式的 Logo，填在这里，例如 "/images/logo.svg"
 # Safari 浏览器“固定标签页”(Pinned Tab) 时的单色图标颜色
-svgFavicon = "favicon.svg"
+svgFavicon = ""
 
 # 建议改成你博客的主色调
 iconColor = "#5bbad5" 
