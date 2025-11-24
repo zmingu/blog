@@ -2,6 +2,7 @@
 title: "掠影"
 date: 2025-08-25
 layout: ""
+comment: false
 menu:
   main:
     weight: 6
@@ -98,18 +99,52 @@ menu:
   }
 
   async function fetchNeoDBData(category, type) {
-    const jsonUrl = `https://neodb.zmingu.com/${category}_${type}.json`;
+    console.log(`[本地优先] 开始加载 ${category}_${type}`);
+    
+    // 第一优先级：本地文件 (/data/neodb/)
+    const localUrl = `/data/neodb/${category}_${type}.json`;
     try {
-      const response = await fetch(jsonUrl);
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      const fullData = await response.json();
-      const items = Array.isArray(fullData) ? fullData : (fullData.data || []);
-      const filteredData = items.filter(item => item.shelf_type === type);
-      return { data: filteredData };
+      const response = await fetch(localUrl);
+      if (response.ok) {
+        const data = await response.json();
+        const dataArray = Array.isArray(data) ? data : (data.data || []);
+        console.log(`[本地数据] 成功加载 ${category}_${type}, 数据条数: ${dataArray.length}`);
+        return { data: dataArray };
+      }
     } catch (error) {
-      console.error(`加载 ${jsonUrl} 失败:`, error);
-      return { data: [] };
+      console.warn(`[本地数据] 加载失败: ${error.message}`);
     }
+
+    // 第二优先级：jsDelivr CDN (GitHub 源)
+    const cdnUrl = `https://cdn.jsdelivr.net/gh/zmingu/neodb-data@main/neodb/${category}_${type}.json`;
+    try {
+      const response = await fetch(cdnUrl, { timeout: 5000 });
+      if (response.ok) {
+        const data = await response.json();
+        const dataArray = Array.isArray(data) ? data : (data.data || []);
+        console.log(`[CDN数据] 成功从 jsDelivr 加载 ${category}_${type}, 数据条数: ${dataArray.length}`);
+        return { data: dataArray };
+      }
+    } catch (error) {
+      console.warn(`[CDN数据] jsDelivr 加载失败: ${error.message}`);
+    }
+
+    // 第三优先级：GitHub Raw (备用)
+    const githubUrl = `https://raw.githubusercontent.com/zmingu/neodb-data/main/neodb/${category}_${type}.json`;
+    try {
+      const response = await fetch(githubUrl, { timeout: 5000 });
+      if (response.ok) {
+        const data = await response.json();
+        const dataArray = Array.isArray(data) ? data : (data.data || []);
+        console.log(`[GitHub] 成功从 GitHub Raw 加载 ${category}_${type}, 数据条数: ${dataArray.length}`);
+        return { data: dataArray };
+      }
+    } catch (error) {
+      console.warn(`[GitHub] GitHub Raw 加载失败: ${error.message}`);
+    }
+
+    console.error(`加载 ${category}_${type} 所有来源都失败`);
+    return { data: [] };
   }
 
   function renderStars(rating) {

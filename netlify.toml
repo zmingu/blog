@@ -1,6 +1,6 @@
 [build]
-  # 增加了压缩和清理命令，提升访问速度
-  command = "hugo --gc --minify"
+  # 构建前拉取最新数据，然后进行 Hugo 构建
+  command = "npm run fetch:neodb && hugo --gc --minify"
   publish = "public"
 
 [build.environment]

@@ -1,0 +1,14 @@
+{
+  "name": "zmingu-blog",
+  "version": "1.0.0",
+  "description": "振明的博客",
+  "scripts": {
+    "fetch:neodb": "node scripts/fetch-neodb-data.js",
+    "build": "npm run fetch:neodb && hugo",
+    "server": "hugo server",
+    "server:prod": "hugo server -e production"
+  },
+  "keywords": [],
+  "author": "Zmingu",
+  "license": "MIT"
+}

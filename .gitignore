@@ -75,6 +75,11 @@ tools/add_frontmatter_backups/
 # 主题文件 (如果使用 git submodule 管理主题)
 themes/* (如果不想版本控制主题文件可以取消注释)
 
+/_vendor/
+
+# 主题文件 (如果使用 git submodule 管理主题)
+themes/* (如果不想版本控制主题文件可以取消注释)
+
 # 部署相关文件
 .deploy_git/
 .netlify/
@@ -99,3 +104,7 @@ development.toml
 
 /.obsidian/workspace.json
 /hugo_stats.json
+
+# NeoDB 数据文件：版本控制，作为本地备份
+# 注意：这些文件由 fetch:neodb 脚本自动更新
+# !/static/data/neodb/*.json
