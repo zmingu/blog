@@ -9,7 +9,7 @@
 # Hugo Configuration (Hugo配置)
 # See: https://gohugo.io/getting-started/configuration/
 # -------------------------------------------------------------------------------------
-title = "振明的博客"# 网站标题
+title = "Zmingu's Blog"# 网站标题
 
 baseURL = "https://blog.zmingu.com"# 根目录的主机名（和路径）
 

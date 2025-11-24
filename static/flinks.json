@@ -1,0 +1,26 @@
+[
+  {
+    "group": "技术大佬",
+    "desc": "一些厉害的技术博主",
+    "items": [
+      {
+        "name": "阵雨兄's Blog",
+        "url": "https://blog.alttt.com/",
+        "avatar": "https://blog.alttt.com/img/favicon.ico",
+        "description": " 记录每一天的点点滴滴"
+      }
+    ]
+  },
+  {
+    "group": "生活随笔",
+    "desc": "记录生活点滴的朋友",
+    "items": [
+      {
+        "name": "示例博主",
+        "url": "https://example.com",
+        "avatar": "https://img.icons8.com/color/100/avatar.png",
+        "description": "这是一个示例描述文案"
+      }
+    ]
+  }
+]
