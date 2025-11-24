@@ -1,8 +1,8 @@
 ---
-title: "轻语"
+title: 轻语
 date: 2024-11-24
-type: "whisper"
-layout: "whisper"
+type: "mastodon"
+layout: "mastodon"
 comment: false
 menu:
   main:
