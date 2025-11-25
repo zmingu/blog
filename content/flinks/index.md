@@ -17,7 +17,7 @@ menu:
 
 - **名称**：振明的博客
 - **链接**：`https://blog.zmingu.com`
-- **图标**：`https://blog.zmingu.com/images/avatar.webp`
+- **图标**：`https://blog.zmingu.com/favicon.ico`
 - **描述**：休负浪客千里志，三尺青锋渡沧洲。
 
 ---
