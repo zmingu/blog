@@ -15,6 +15,8 @@ const https = require('https');
 const CATEGORIES = ['game', 'movie', 'tv', 'book'];
 const TYPES = ['complete', 'progress', 'wishlist'];
 const DATA_DIR = path.join(__dirname, '../static/data/neodb');
+const MAX_RETRIES = 3;
+const TIMEOUT = 10000; // 10 seconds
 
 // 确保目录存在
 if (!fs.existsSync(DATA_DIR)) {
@@ -22,11 +24,16 @@ if (!fs.existsSync(DATA_DIR)) {
 }
 
 /**
- * 从 GitHub Raw 下载 JSON 文件
+ * 从 GitHub Raw 下载 JSON 文件 (带重试和超时)
  */
-function downloadFile(url) {
+function downloadFile(url, retries = MAX_RETRIES) {
   return new Promise((resolve, reject) => {
-    https.get(url, (res) => {
+    const request = https.get(url, { timeout: TIMEOUT }, (res) => {
+      if (res.statusCode !== 200) {
+        res.resume(); // Consume response data to free up memory
+        return reject(new Error(`请求失败，状态码: ${res.statusCode}`));
+      }
+
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
@@ -36,7 +43,22 @@ function downloadFile(url) {
           reject(new Error(`JSON 解析失败: ${e.message}`));
         }
       });
-    }).on('error', reject);
+    });
+
+    request.on('error', (err) => {
+      reject(new Error(`网络错误: ${err.message}`));
+    });
+
+    request.on('timeout', () => {
+      request.destroy();
+      reject(new Error(`请求超时 (${TIMEOUT}ms)`));
+    });
+  }).catch(err => {
+    if (retries > 0) {
+      console.log(`    ⚠️ 下载失败: ${err.message}. 重试中 (${retries} 剩余)...`);
+      return new Promise(r => setTimeout(r, 1000)).then(() => downloadFile(url, retries - 1));
+    }
+    throw err;
   });
 }
 
@@ -81,14 +103,11 @@ async function main() {
   console.log(`   ✅ 成功: ${successCount}/${CATEGORIES.length * TYPES.length}`);
   if (failCount > 0) {
     console.log(`   ❌ 失败: ${failCount}/${CATEGORIES.length * TYPES.length}`);
-  }
-
-  if (failCount > 0) {
     process.exit(1);
   }
 }
 
 main().catch(error => {
-  console.error('\n❌ 错误:', error.message);
+  console.error('\n❌ 致命错误:', error.message);
   process.exit(1);
 });
