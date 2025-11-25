@@ -941,7 +941,7 @@ server = ""      # 如果是自托管 Fathom，填服务器地址
 
 # 百度统计
 [params.analytics.baidu]
-id = "83a3dc18dcc0b339e59df9d63271e03a"          # 百度统计 ID (注意：只填 hm.js? 后面那串字符，不是整段脚本)
+id = ""          # 百度统计 ID (注意：只填 hm.js? 后面那串字符，不是整段脚本)
 
 # 开源、隐私友好的统计 Umami
 [params.analytics.umami]
