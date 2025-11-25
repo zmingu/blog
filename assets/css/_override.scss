@@ -1,7 +1,36 @@
-/* 全文字体 - 霞鹜文楷 */
-@import url('https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css');
-$global-font-family: 'LXGW WenKai Screen', $global-font-family;
+/* ==================================================
+   1. 中文字体 (CDN) - 霞鹜文楷
+   ================================================== */
+/* 使用 s4.zstatic.net 镜像加速 */
+@import url('https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css');
 
-/* 代码字体 - Fira Mono */
-@import url('https://fonts.loli.net/css?family=JetBrains+Mono:400,700&display=swap&subset=latin-ext');
-$code-font-family: Fira Mono, $code-font-family;
+/* 应用全文字体 */
+/* 注意：确保 'LXGW WenKai Screen' 排在最前面 */
+$global-font-family: 'LXGW WenKai Screen', sans-serif, $global-font-family;
+
+
+/* ==================================================
+   2. 代码字体 (本地化) - JetBrains Mono
+   ================================================== */
+
+/* 定义常规体 (Regular) */
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-display: swap;
+}
+
+/* 定义粗体 (Bold) */
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+    font-display: swap;
+}
+
+/* 应用代码字体 */
+/* 重点：这里变量名要改成 'JetBrains Mono'，不要再叫 Fira Mono 了，避免混淆 */
+$code-font-family: 'JetBrains Mono', monospace, $code-font-family;
