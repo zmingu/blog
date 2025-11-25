@@ -518,7 +518,7 @@ disableThemeInject = false # 禁用主题注入 = false：是否禁用首页 hea
 name = "振明" # 建议：填您的真实姓名或笔名，用于文章作者显示和 SEO（必填，避免默认空值）。
 email = "zmingu@126.com" # 邮箱 = ""：作者电子邮件，用于联系表单或 Gravatar 关联（可选，注意隐私）。
 link = "https://blog.zmingu.com" # 链接 = ""：作者个人链接，如个人网站、GitHub 或 Twitter URL。
-avatar = "/images/avatar_anime.webp" # 头像 = ""：作者头像 URL 或相对路径（如 /images/avatar.jpg），用于文章和侧边栏显示。
+avatar = "/images/avatar-anime.webp" # 头像 = ""：作者头像 URL 或相对路径（如 /images/avatar.jpg），用于文章和侧边栏显示。
 
 # FixIt 0.3.0 | 新功能：公开 Git 仓库信息，仅当 enableGitInfo 为 true 时生效
 [params.gitInfo]
