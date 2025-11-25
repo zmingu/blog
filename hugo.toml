@@ -650,7 +650,7 @@ license = ""     # 许可协议信息 (支持 HTML，例如 '<a href="...">CC BY
 
 # 是否显示 "Powered by Hugo & FixIt
 [params.footer.powered]
-enable = true    # 是否开启推广信息显示
+enable = false    # 是否开启推广信息显示
 hugoLogo = false  # 是否显示 Hugo 的 Logo 小图标
 themeLogo = false # 是否显示 FixIt 主题的 Logo 小图标
 

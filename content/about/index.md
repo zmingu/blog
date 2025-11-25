@@ -95,11 +95,11 @@ menu:
 ---
 
 ### 📜 关于本站
-- 2025.10.24：跟换 [FixIt](https://github.com/hugo-fixit/FixIt) 主题，部署于 [Netlify](https://www.netlify.com/)，图片存储于自建 S3。
-- 2025.08.25：拥抱静态，拥抱Hugo。
+- 2025.10.24：跟换 [FixIt](https://vercel.com) 主题，部署于 [Vercel](https://vercel.com)，图片存储于自建 S3。
+- 2025.08.25：拥抱静态，拥抱`Hugo`。
 - 2025.04.08：网站数据迁移到本地服务器，数据无价，反代存在问题待修复。
 - 2024.11.19: 更换域名为`blog.zmingu.com`,数据库由`sqlite3`换成`mysql`。
-- 2024.01.22：回归`typecho`，拥抱轻简，主题使用`initial_plus`。博客字体使用[霞鹜文楷](https://github.com/lxgw/LxgwWenKai)。
+- 2024.01.22：回归[Typecho](https://typecho.org/)，拥抱轻简，主题使用[initial_plus](https://blog.alttt.com/398.html/comment-page-1)。博客字体使用[霞鹜文楷](https://github.com/lxgw/LxgwWenKai)。
 - 2023.12.16：将评论系统`twikoo`部署在微软云服务器中的容器中。
 - 2023.12.11：将原博客域名`blog.zming.top`更换为为`blog.zmingu.top`。
 - 2023.6.10：云服务器到期，使用`NotionNext+Verecl`部署。
