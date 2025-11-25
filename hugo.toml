@@ -656,11 +656,11 @@ themeLogo = false # 是否显示 FixIt 主题的 Logo 小图标
 
 # 网站运行时间统计
 [params.footer.siteTime]
-enable = true   # 是否在页脚显示 "网站已运行 XX 天" (建议开启，很有成就感)
-animate = true   # 是否开启秒数的跳动动画
+enable = false   # 是否在页脚显示 "网站已运行 XX 天" (建议开启，很有成就感)
+animate = false   # 是否开启秒数的跳动动画
 icon = "fa-solid fa-heartbeat" # 运行时间前的图标 (默认是心跳)
-pre = "博客已运行:"         # 时间前的描述文字 (例如 "博客已运行:")
-value = "2020-12-18T16:15:22+08:00"       # 网站建站时间，必须严格按照此格式填写: "2021-12-18T16:15:22+08:00"
+pre = "已运行:"         # 时间前的描述文字 (例如 "博客已运行:")
+value = "2020-01-01T16:15:22+08:00"       # 网站建站时间，必须严格按照此格式填写: "2021-12-18T16:15:22+08:00"
 
 # 页脚各组件的排序: ["first", 0, 1, 2, 3, 4, 5, "last"]
 [params.footer.order]
@@ -1114,7 +1114,7 @@ menuMobile = []       # 插入到移动端菜单
 profile = []          # 插入到主页个人简介区
 aside = []            # 插入到侧边栏
 comment = []          # 插入到评论区
-footer = []           # 插入到页脚
+footer = ["custom/footer.html"]           # 插入到页脚
 widgets = []          # 插入到侧边栏小部件
 assets = []           # 插入自定义静态资源
 postTocBefore = []    # 插入到文章目录之前

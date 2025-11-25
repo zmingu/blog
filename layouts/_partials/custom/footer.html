@@ -1,0 +1,16 @@
+<!-- 统计博客的总字数和文章总数 -->
+<section class="totalcount">
+    {{$scratch := newScratch}}
+    {{ range (where .Site.Pages "Kind" "page" )}}
+    {{$scratch.Add "total" .WordCount}}
+    {{ end }}
+
+    {{/* 获取总字数 */}}
+    {{$totalWords := $scratch.Get "total"}}
+
+    {{/* 将总字数转换为千字并格式化，保留一位小数 */}}
+    {{$totalKWords := div (float $totalWords) 1000.0}}
+    {{$formattedKWords := printf "%.1f" $totalKWords}}
+
+    共书写了{{$formattedKWords}}k字·{{ len (where .Site.RegularPages "Section" "posts") }}篇文章
+</section>
