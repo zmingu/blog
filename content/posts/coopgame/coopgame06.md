@@ -2,6 +2,7 @@
 title: CoopGame06-AI基础
 subtitle:
 date: 2022-10-10T14:46:00+08:00
+lastmod: 2024-05-27T15:26:00+08:00
 slug: coopgame06
 draft: false
 keywords:
