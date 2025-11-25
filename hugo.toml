@@ -1108,7 +1108,7 @@ boxed = true     # 是否显示边框
 # Custom partials must be stored in the /layouts/partials/ directory.
 # 用于在页面特定位置插入自定义 HTML/Go 代码，无需修改主题源码
 [params.customPartials]
-head = []             # 插入到 <head> 标签内
+head = ["custom/head.html"]             # 插入到 <head> 标签内
 menuDesktop = []      # 插入到桌面端菜单
 menuMobile = []       # 插入到移动端菜单
 profile = []          # 插入到主页个人简介区

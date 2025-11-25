@@ -2,11 +2,11 @@
    1. 中文字体 (CDN) - 霞鹜文楷
    ================================================== */
 /* 使用 s4.zstatic.net 镜像加速 */
-@import url('https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css');
+// @import url('https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css');
 
-/* 应用全文字体 */
-/* 注意：确保 'LXGW WenKai Screen' 排在最前面 */
-$global-font-family: 'LXGW WenKai Screen', sans-serif, $global-font-family;
+// /* 应用全文字体 */
+// /* 注意：确保 'LXGW WenKai Screen' 排在最前面 */
+// $global-font-family: 'LXGW WenKai Screen', sans-serif, $global-font-family;
 
 
 /* ==================================================
@@ -31,6 +31,11 @@ $global-font-family: 'LXGW WenKai Screen', sans-serif, $global-font-family;
     font-display: swap;
 }
 
+/* 全文字体 - 霞鹜文楷 */
+/* 注意：这里不需要 import，因为已经在 HTML head 里加载了，直接用名字即可 */
+$global-font-family: 'LXGW WenKai Screen', sans-serif, $global-font-family;
+
 /* 应用代码字体 */
 /* 重点：这里变量名要改成 'JetBrains Mono'，不要再叫 Fira Mono 了，避免混淆 */
 $code-font-family: 'JetBrains Mono', monospace, $code-font-family;
+
