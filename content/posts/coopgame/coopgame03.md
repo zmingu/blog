@@ -17,7 +17,6 @@ categories:
 toc: true
 collections:
   - Unreal Engine Tutorial CoopGame
-featuredImage: /images/cover_coopgame.webp
 ---
 
 这是虚幻教程系列 - CoopGame的第3篇,实现开镜狙击等.

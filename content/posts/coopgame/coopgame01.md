@@ -1,5 +1,6 @@
 ---
 title: CoopGame01-创建玩家
+subtitle:
 date: 2022-10-01T15:18:00+08:00
 lastmod: 2024-05-25T15:18:00+08:00
 slug: coopgame01
@@ -32,16 +33,20 @@ featuredImage: /images/cover_coopgame.webp
 
 <!--more-->
 
-> 介绍:
+{{< admonition abstract >}}
+介绍:
 B站UP主[技术宅阿棍儿](https://space.bilibili.com/92060300)的转述教程视频 , 据其制作的笔记和包含自己的理解 .
-> 
-> 原教程链接:[CoopGame](https://www.udemy.com/share/1002AcBUIbcldaQXo=/)(课程已停止注册)
->
->需要准备的资产:[项目源文件(蓝奏云)](https://wwql.lanzout.com/b030ouw2ud),密码:zmingu
-> 
->UE版本:4.27.2
->
-> VS版本:2022
+
+原教程链接:[CoopGame](https://www.udemy.com/share/1002AcBUIbcldaQXo=/)(课程已停止注册)
+
+需要准备的资产:[项目源文件(蓝奏云)](https://wwql.lanzout.com/b030ouw2ud),密码:zmingu
+
+UE版本:4.27.2
+
+VS版本:2022
+{{< /admonition >}}
+
+
 
 ### 创建项目
 1. 新建 游戏-> 空白 ->C++项目, 取消初学者内容包,设置项目名:CoopGame.
