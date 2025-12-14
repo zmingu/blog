@@ -155,13 +155,13 @@ collections:
 1. 在`Blueprint/Character/Aura`文件夹中，创建动画蓝图`ABP_Aura`，添加状态机`Main States`，连接默认插槽`DefaultSlot`用于播放蒙太奇。
 2. `Main States`添加状态机`IdleWalkRun`，状态内部添加混合空间`IdleWalkRun`。
 3. 复写蓝图初始化动画事件`Event Blueprint Initialize Animation`，用尝试获得Pawn拥有者`Try Get Pawn Owner`节点拿到并转换成`BP_AuraCharacter`，提升为变量`BP_Aure_Character`，拿到移动组件提升为变量`CharacterMovement`。
-4. 覆写蓝图更新动画事件`Event Blueprint Update Animation`（如果更复杂的动画蓝图可以覆写蓝图线程安全更新动画），有效获取`BP_Aura_Character`，在移动组件变量中获取速度`Velocity`，获得向量长度`XYVector Length XY`（角色横向移动的速度），提升为变量`GroundSpeed`，用`GroundSpeed`驱动之前的混合空间`IdleWalkRun`
+4. 覆写蓝图更新动画事件`Event Blueprint Update Animation`（如果更复杂的动画蓝图可以覆写蓝图线程安全更新动画），有效获取`BP_Aura_Character`，在移动组件变量中获取速度`Velocity`，获得向量长度XY`Vector Length XY`（角色横向移动的速度），提升为变量`GroundSpeed`，用`GroundSpeed`驱动之前的混合空间`IdleWalkRun`
 5. 在角色蓝图`BP_AuraCharacter`中为骨骼网格体设置动画蓝图`ABP_Aura`
 6. 给敌人设置动画蓝图（敌人有很多种骨骼网格图，需要考虑到通用性）
     1. 在Character目录下创建`ABP_Enemy`，创建时选择模板
     2. 添加`Main States`状态机，连接`DeaultSlot`插槽 
-    3. 状态机添加状态`IdleWalkRun`，连接混合空间播放器`Blendspace Player`
-    4. 用相同方式从敌人类中拿到水平速度驱动动画。
+    3. 状态机添加状态`IdleWalkRun`，同样方式拿到`GroundSpeed`,再连接混合空间播放器`Blendspace Player`
+    4. 用相同方式从敌人类中拿到水平速度驱动动画, 只是这次是从`AuraEnemy`中拿到移动运动组件。
     5. 在Blueprint/Character/Goblin_Spear文件夹下创建动画蓝图，继承`ABP_Enemy`，网格体选`SKM_Goblin_Spear` ，命名为`ABP_Goblin_Spear`
     6. 在资产覆盖窗口`Asset Override`，找到那个混合空间播放器，设置长矛的那个混合空间。
     7. 为`BP_Goblin_Spear`设置动画蓝图
