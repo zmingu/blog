@@ -561,7 +561,7 @@ enable = true # 是否开启搜索功能 (建议改为 true)
 
 type = "fuse" # 搜索引擎类型 ["algolia", "fuse", "cse", "post-chat"],推荐初学者使用 "fuse" (本地模糊搜索)，无需注册第三方服务
 
-contentLength = 4000# 文章内容索引的最大长度,设为 4000 可以覆盖大部分长文章，太长会增加索引文件体积
+contentLength = 2000# 文章内容索引的最大长度,设为 2000 足够搜索匹配，减少索引文件体积
 
 placeholder = "搜索文章标题或内容..." # 搜索框的占位符文本 (例如: "搜索文章标题或内容...")
 
@@ -1092,8 +1092,8 @@ userId = ""      # Follow User ID
 
 # FixIt 0.3.17 | NEW Image config (图片优化配置)
 [params.image]
-cacheRemote = false # 是否缓存远程图片以进行优化 (需要 Hugo 扩展版)
-optimise = false # 是否开启图片自动调整大小和优化 (构建速度会变慢，但加载更快)
+cacheRemote = true # 是否缓存远程图片以进行优化 (需要 Hugo 扩展版)
+optimise = true # 是否开启图片自动调整大小和优化 (构建速度会变慢，但加载更快)
 
 # FixIt 0.4.0 | NEW JSON Viewer config (JSON 查看器配置)
 # See https://github.com/Lruihao/json-viewer-element
