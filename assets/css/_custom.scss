@@ -1,47 +1,28 @@
-/* =========================================
-   Game Dev Avatar Flipper (头像彩蛋特效)
-   ========================================= */
+/* ==================================================
+   头像翻转彩蛋特效
+   ================================================== */
 
-/* 
-   Targeting the Home Profile Avatar.
-   Structure: .home-avatar > a > img
-*/
-
-/* 1. Container Styles (The Card) */
 .home-avatar a {
     position: relative;
     display: inline-block;
-    /* Ensure the container takes the size of the image */
     line-height: 0;
     border-radius: 50%;
-
-    /* CLS 优化：固定头像容器尺寸，防止加载时布局偏移 */
     width: 6rem;
     height: 6rem;
     aspect-ratio: 1 / 1;
-
-    /* 3D Context */
     perspective: 1000px;
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* 2. Front Face (The Anime Image) */
 .home-avatar a img {
-    /* Ensure image fits */
     max-width: 100%;
     height: auto;
     border-radius: 50%;
-
-    /* Face visibility */
     backface-visibility: hidden;
-    /* Remove z-index to let 3D transform handle visibility */
-
-    /* Disable theme's default transition to avoid conflict */
     transition: none !important;
 }
 
-/* 3. Back Face (The Real Person Image) */
 .home-avatar a::after {
     content: '';
     position: absolute;
@@ -50,31 +31,18 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-
-    /* Face visibility */
     backface-visibility: hidden;
-
-    /* --- Real Person Image --- */
     background-image: url('/images/avatar-real.webp');
-    /* ------------------------- */
-
     background-size: cover;
     background-position: center;
-
-    /* Pre-rotated to face backwards */
     transform: rotateY(180deg);
 }
 
-/* 4. Hover Trigger */
-
-/* Rotate the entire container */
 .home-avatar a:hover {
     transform: rotateY(180deg);
     transition-delay: 0.15s;
-    /* Add a small delay to prevent accidental triggers */
 }
 
-/* Disable default theme hover effect on the image */
 .home .home-profile .home-avatar img:hover {
     transform: none !important;
     box-shadow: none !important;
