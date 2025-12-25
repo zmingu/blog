@@ -5,6 +5,7 @@ date: 2023-04-10T23:21:00+08:00
 lastmod: 2024-05-08T10:36:17+08:00
 slug: daoheart
 draft: false
+summary: "2023 毕设团队 UE5 多人联机武侠游戏 Demo，包含游戏场景、CG 及 VR 视角演示视频。"
 keywords:
   - daoheart
   - 毕业设计

@@ -5,6 +5,7 @@ date: 2024-12-07T13:15:00+08:00
 lastmod: 2025-04-07T13:18:39+08:00
 slug: dockermirror
 draft: false
+summary: "自建 Docker Hub 镜像加速服务：配置 registry-mirrors 或直接使用镜像前缀。"
 keywords:
   - docker
 weight: 0

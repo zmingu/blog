@@ -3,6 +3,7 @@ title: 群辉释放80/443端口
 date: 2025-08-05 13:30:02 +08:00
 slug: synology-release-80-443
 draft: false
+summary: "群辉 NAS 释放 80/443 端口：修改 nginx 配置文件改用 8880/8443。"
 keywords:
   - 群辉
   - synology

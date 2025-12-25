@@ -5,6 +5,7 @@ date: 2023-05-08T20:06:00+08:00
 lastmod: 2025-05-08T10:36:17+08:00
 slug: cpp-primer-plus-6th-02
 draft: false
+summary: "C++ Primer Plus 笔记：内联函数、引用、默认参数、函数重载、函数模板和名称空间。"
 keywords:
   - C++ Primer Plus
 weight: 0

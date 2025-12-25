@@ -5,6 +5,7 @@ date: 2022-08-03T22:16:00+08:00
 lastmod: 2025-04-16T14:56:53+08:00
 slug: yizhi7
 draft: false
+summary: "2022 暑期实训团队项目《意志7》，获优秀作品和最佳人气奖，参展世界 VR 产业大会。"
 keywords:
   - yizhi7
   - 毕业设计

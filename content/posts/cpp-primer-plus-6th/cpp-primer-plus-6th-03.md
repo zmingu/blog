@@ -5,6 +5,7 @@ date: 2023-05-08T20:06:00+08:00
 lastmod: 2025-05-08T10:36:17+08:00
 slug: cpp-primer-plus-6th-03
 draft: false
+summary: "C++ Primer Plus 笔记：代码重用、多重继承、友元、异常、RTTI 和文件 I/O。"
 keywords:
   - C++ Primer Plus
 weight: 0

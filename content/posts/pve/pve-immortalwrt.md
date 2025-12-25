@@ -3,6 +3,7 @@ title: PVE安装和配置immortalwrt
 date: 2025-09-09 10:22:41 +08:00
 slug: pve-immortalwrt
 draft: false
+summary: "在 PVE 中创建 immortalwrt 虚拟机的完整教程，包含固件导入、磁盘扩容、网卡直通和 iStore 安装。"
 keywords:
   - pve
   - immortalwrt

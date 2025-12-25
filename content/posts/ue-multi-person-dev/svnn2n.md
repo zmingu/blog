@@ -5,6 +5,7 @@ date: 2022-11-19T20:22:00+08:00
 lastmod: 2025-04-07T16:11:39+08:00
 slug: svnn2n
 draft: false
+summary: "使用 n2n 组建虚拟局域网实现 UE 项目异地 SVN 协同开发。"
 keywords:
   - 虚幻引擎多人开发
   - SVN

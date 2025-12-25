@@ -5,6 +5,7 @@ date: 2025-03-17T08:16:00+08:00
 lastmod: 2025-04-17T08:13:47+08:00
 slug: ubuntu
 draft: false
+summary: "Ubuntu Server 网络配置笔记：使用 netplan 设置静态 IP 地址。"
 keywords:
   - Ubuntu Server
 weight: 0

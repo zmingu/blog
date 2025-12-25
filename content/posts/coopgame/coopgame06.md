@@ -5,6 +5,7 @@ date: 2022-10-10T14:46:00+08:00
 lastmod: 2024-05-27T15:26:00+08:00
 slug: coopgame06
 draft: false
+summary: "UE5 AI 基础：导航网格、追踪球 AI、自爆伤害、群体 Buff 和网络同步。"
 keywords:
   - 虚幻引擎教程
   - UEC++教程

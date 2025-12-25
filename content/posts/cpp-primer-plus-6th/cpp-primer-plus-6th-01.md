@@ -5,6 +5,7 @@ date: 2023-05-08T20:06:00+08:00
 lastmod: 2025-05-08T10:36:17+08:00
 slug: cpp-primer-plus-6th-01
 draft: false
+summary: "C++ Primer Plus 第六版笔记，涵盖数据类型、变量、const、浮点数及基本算术运算。"
 keywords:
   - C++ Primer Plus
 weight: 0

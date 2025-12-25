@@ -22,7 +22,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary:
+summary: "博客介绍与测试文章。"
 resources:
   - name: featured-image
     src: featured-image.jpg

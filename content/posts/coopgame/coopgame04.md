@@ -5,6 +5,7 @@ date: 2022-10-04T17:43:00+08:00
 lastmod: 2024-05-26T15:22:00+08:00
 slug: coopgame04
 draft: false
+summary: "UE5 生命系统：自定义生命组件、动态多播委托、死亡动画和爆炸油桶。"
 keywords:
   - 虚幻引擎教程
   - UEC++教程

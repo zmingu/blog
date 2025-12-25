@@ -5,6 +5,7 @@ date: 2022-10-31T19:20:00+08:00
 lastmod: 2025-04-07T16:07:58+08:00
 slug: vim
 draft: false
+summary: "Vim 常用命令速查：移动、删除、插入、跳跃和窗口控制。"
 keywords:
   - Vim
 weight: 0

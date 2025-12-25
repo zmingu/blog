@@ -3,6 +3,7 @@ title: 小米cr8808最稳hzyitc固件教程
 date: 2025-09-07 14:37:50 +08:00
 slug: xiaomi-cr8808
 draft: false
+summary: "小米 CR8808 刷 hzyitc 固件，支持 NSS NAT 硬件加速、zram、802.11kvr 漫游及 Passwall。"
 keywords:
   - 小米cr8808
   - hzyitc固件

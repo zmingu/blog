@@ -5,6 +5,7 @@ date: 2024-12-29T23:40:00+08:00
 lastmod: 2025-04-17T09:31:41+08:00
 slug: win-package
 draft: false
+summary: "Win10 22H2 系统封装教程：母盘制作、优化精简、软件集成和万能驱动。"
 keywords:
   - Windows
   - 系统封装

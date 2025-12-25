@@ -5,6 +5,7 @@ date: 2023-04-08T22:58:00+08:00
 lastmod: 2024-03-08T23:30:36+08:00
 slug: delegate
 draft: false
+summary: "UE5 委托/代理机制详解：静态单播、静态多播、动态单播、动态多播四种类型的声明、绑定和执行。"
 keywords:
   - Unreal Delegate
   - 虚幻引擎委托

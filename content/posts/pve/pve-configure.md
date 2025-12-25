@@ -3,6 +3,7 @@ title: PVE配置
 date: 2025-09-09 10:22:41 +08:00
 slug: pve-configure
 draft: false
+summary: "PVE 进阶配置指南：显卡直通、硬盘直通、黑群晖安装、Docker 配置、LXC 容器管理及 CPU 省电优化。"
 keywords:
   - pve
 tags:

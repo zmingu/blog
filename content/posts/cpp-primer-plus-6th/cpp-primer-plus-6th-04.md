@@ -4,6 +4,7 @@ date: 2023-05-08T11:00:00+08:00
 lastmod: 2025-05-08T11:00:31+08:00
 slug: cpp-primer-plus-6th-04
 draft: false
+summary: "C++ Primer Plus 第六版各章编程练习题解答，涵盖基础到高级主题。"
 keywords:
   - C++ Primer Plus
 weight: 0

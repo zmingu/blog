@@ -5,6 +5,7 @@ date: 2025-02-11T00:07:00+08:00
 lastmod: 2025-04-15T14:45:23+08:00
 slug: ue-optimize
 draft: false
+summary: "UE5 性能优化常用命令：stat 统计、ProfileGPU 分析和 Unreal Insights 追踪。"
 keywords:
   - 虚幻引擎性能优化
 weight: 0

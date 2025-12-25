@@ -3,6 +3,7 @@ title: Cursor禁用自动更新和进行无限学习
 date: 2024-12-20T22:12:00+08:00
 slug: cursor-disable-update
 draft: false
+summary: "禁用 Cursor 自动更新的方法：设置只读文件阻止 updater 和 app-update.yml。"
 keywords:
   - Cursor
   - AI

@@ -32,6 +32,8 @@ enableGitInfo = true # 是否使用 Git 提交日志,启用 Git 信息集成，�
 
 enableEmoji = true # 是否使用表情符号代码，允许 Hugo 解析和渲染 Emoji（如 :smile: 转为 😊）。设置为 true 时，支持 Markdown 中的 Emoji 短码。当前已启用，几乎所有现代站点都推荐。
 
+summaryLength = 10 # 自动生成摘要的字数限制（默认70），设为40让文章列表更简洁
+
 # 站点的主要部分，如果设置，Site 对象的 MainSections 方法将返回指定的部分；否则，返回页面最多的部分。
 # 定义站点的“主要”内容部分（如 "posts" 为博客文章目录），用于 RSS、归档页等。当前被注释掉（#），Hugo 会自动选择页面最多的 section（如 content/posts）。如果您的博客有多个部分，取消注释并指定如 mainSections = ["posts", "projects"]。
 # mainSections = ["posts"]

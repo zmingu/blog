@@ -5,6 +5,7 @@ date: 2025-04-12T21:08:00+08:00
 lastmod: 2025-07-28T13:50:41+08:00
 slug: gas-aura-01
 draft: false
+summary: "UE5 GAS 能力系统完整教程笔记，涵盖 ASC、属性集、技能效果、UI 交互和多人同步机制。"
 keywords:
   - 虚幻引擎教程
   - UEC++教程

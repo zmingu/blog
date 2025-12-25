@@ -3,6 +3,7 @@ title: 新路由newifi3-d2最稳定固件刷写教程
 date: 2025-09-09 00:38:56 +08:00
 slug: newifi3-d2
 draft: false
+summary: "Newifi3 D2 刷入 immortalwrt 21.02.7 固件，配置换源、USB扩容、zram 及 IPv6 中继。"
 keywords:
   - newifi3
   - immortalwrt

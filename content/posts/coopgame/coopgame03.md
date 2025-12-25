@@ -5,6 +5,7 @@ date: 2022-10-03T19:29:00+08:00
 lastmod: 2024-05-26T15:20:00+08:00
 slug: coopgame03
 draft: false
+summary: "UE5 武器进阶：开镜瞄准、物理表面材质、不同击中特效、头部暴击和连发射击。"
 keywords:
   - 虚幻引擎教程
   - UEC++教程

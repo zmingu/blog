@@ -3,6 +3,7 @@ title: Window11自用配置与优化
 date: 2025-09-04 20:19:19 +08:00
 slug: win11-optimize
 draft: false
+summary: "Windows 11 系统优化配置指南：禁用自动更新、卸载内置应用、关闭杀毒和常用软件安装列表。"
 keywords:
   - Window11
   - Window11优化

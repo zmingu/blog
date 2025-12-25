@@ -5,6 +5,7 @@ date: 2022-10-01T15:18:00+08:00
 lastmod: 2024-05-25T15:18:00+08:00
 slug: coopgame01
 draft: false
+summary: "UE5 C++ 合作游戏教程开篇：创建玩家角色，实现移动、摄像机控制和动画蓝图。"
 keywords:
   - 虚幻引擎教程
   - UEC++教程

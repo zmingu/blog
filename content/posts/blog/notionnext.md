@@ -5,6 +5,7 @@ date: 2023-11-09T19:30:00+08:00
 lastmod: 2025-04-08T13:12:41+08:00
 slug: notionnext
 draft: false
+summary: "使用 NotionNext 和 Vercel 搭建免服务器博客，配置 CDN 加速访问。"
 keywords:
   - NotionNext
   - Vercel

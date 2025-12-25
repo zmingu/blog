@@ -5,6 +5,7 @@ date: 2024-08-14 10:15:06 +08:00
 lastmod: 2024-08-14 10:15:06 +08:00
 slug: cdhpz
 draft: false
+summary: "UE5 重叠和碰撞事件触发条件：碰撞预设、检测响应和模拟物理设置。"
 keywords:
   - cdhpz
   - 虚幻引擎

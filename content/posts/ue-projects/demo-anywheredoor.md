@@ -5,6 +5,7 @@ date: 2022-06-21T17:37:00+08:00
 lastmod: 2025-04-07T15:28:23+08:00
 slug: anywheredoor
 draft: false
+summary: "VR 课程作业：使用 Quest2 手势识别和透视功能制作的任意门小游戏。"
 keywords:
   - VR任意门
   - 虚拟现实

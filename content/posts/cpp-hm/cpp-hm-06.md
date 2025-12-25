@@ -2,6 +2,7 @@
 title: 《黑马程序员匠心之作|C++教程》——第6阶段实战-基于STL泛化编程的演讲比赛
 date: 2023-05-06T16:17:00+08:00
 lastmod: 2025-05-07T20:02:09+08:00
+summary: "C++ STL 实战：演讲比赛流程管理系统，使用 vector、map 和 deque 实现。"
 categories:
   - C++
 series:

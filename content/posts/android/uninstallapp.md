@@ -5,6 +5,7 @@ date: 2022-10-26T21:08:00+08:00
 lastmod: 2025-04-07T16:05:05+08:00
 slug: uninstallapp
 draft: false
+summary: "使用 ADB 命令卸载 Android 应用但保留数据和缓存：pm uninstall -k 包名。"
 keywords:
   - Android
   - ADB

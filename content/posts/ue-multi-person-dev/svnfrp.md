@@ -5,6 +5,7 @@ date: 2022-11-30T21:36:00+08:00
 lastmod: 2025-04-07T16:12:03+08:00
 slug: ue-svn-frp
 draft: false
+summary: "使用 frp 内网穿透实现 UE 项目异地 SVN 协同开发，配置服务端和客户端。"
 keywords:
   - 虚幻引擎多人开发
   - SVN
