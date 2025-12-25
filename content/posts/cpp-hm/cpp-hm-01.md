@@ -12,9 +12,9 @@ keywords:
   - C++从0到1入门
 weight: 0
 tags:
-  - C++笔记
+  - CPP笔记
 categories:
-  - C++
+  - CPP
 toc: true
 collections:
   - cpp-hm

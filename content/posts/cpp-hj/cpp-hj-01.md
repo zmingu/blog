@@ -11,9 +11,9 @@ keywords:
   - 侯捷C++八部曲
 weight: 0
 tags:
-  - C++笔记
+  - CPP笔记
 categories:
-  - C++
+  - CPP
 toc: true
 collections:
   - cpp-hj

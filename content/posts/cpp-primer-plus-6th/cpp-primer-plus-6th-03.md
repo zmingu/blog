@@ -10,9 +10,9 @@ keywords:
   - C++ Primer Plus
 weight: 0
 tags:
-  - C++笔记
+  - CPP笔记
 categories:
-  - C++
+  - CPP
 toc: true
 collections:
   - cpp-primer-plus-6th
