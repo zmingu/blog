@@ -1,4 +1,96 @@
 /* ==================================================
+   首页背景图 - 全屏覆盖
+   ================================================== */
+
+/* 首页时在 body 上添加背景图 - 默认使用亮色背景 */
+body:has(.page.home:not(.posts)) {
+    /* 默认使用亮色背景图（适配默认/亮色模式） */
+    background-image: url('/images/bg_a.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    /* 半透明遮罩 - 默认亮色模式用浅色遮罩 */
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* 菜单栏透明 */
+    #header-desktop,
+    #header-mobile {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* 主要内容区 */
+    .wrapper {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* 页脚样式 */
+    footer {
+        background: transparent;
+        color: rgba(255, 255, 255, 0.8);
+
+        a {
+            color: rgba(255, 255, 255, 0.9);
+        }
+    }
+}
+
+/* 暗色模式使用不同的背景图 */
+[data-theme="dark"] body:has(.page.home:not(.posts)) {
+    background-image: url('/images/bg.webp');
+
+    /* 暗色模式用深色遮罩 */
+    &::before {
+        background: rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* 首页内容样式 */
+.page.home:not(.posts) {
+    min-height: auto;
+    background: transparent;
+    padding-bottom: 2rem;
+
+    .home-profile {
+        position: relative;
+        z-index: 1;
+        padding-top: 2vh;
+        /* 调整顶部间距 */
+        text-align: center;
+
+        .home-title,
+        .home-subtitle {
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .home-disclaimer {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .social-links a {
+            color: #fff;
+        }
+    }
+}
+
+/* ==================================================
    头像翻转彩蛋特效
    ================================================== */
 

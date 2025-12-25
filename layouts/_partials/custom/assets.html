@@ -1,0 +1,6 @@
+{{- /* 首页添加 home-page 类到 body */ -}}
+<script>
+    if (document.querySelector('.page.home:not(.posts)')) {
+        document.body.classList.add('home-page');
+    }
+</script>

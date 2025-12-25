@@ -85,12 +85,14 @@ async function main() {
     for (const type of TYPES) {
       const filename = `${category}_${type}.json`;
       const url = `https://raw.githubusercontent.com/zmingu/neodb-data/main/neodb/${filename}`;
-      
+
       try {
         process.stdout.write(`  ⏳ 下载 ${filename}... `);
         const data = await downloadFile(url);
         const savedPath = saveFile(filename, data);
-        console.log(`✅ 成功 (${data.length} 条数据)`);
+        // 处理数组和对象两种情况
+        const count = Array.isArray(data) ? data.length : (data.data ? data.data.length : Object.keys(data).length);
+        console.log(`✅ 成功 (${count} 条数据)`);
         successCount++;
       } catch (error) {
         console.log(`❌ 失败: ${error.message}`);
