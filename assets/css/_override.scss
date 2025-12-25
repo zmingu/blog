@@ -39,3 +39,67 @@ $global-font-family: 'LXGW WenKai Screen', sans-serif, $global-font-family;
 /* 重点：这里变量名要改成 'JetBrains Mono'，不要再叫 Fira Mono 了，避免混淆 */
 $code-font-family: 'JetBrains Mono', monospace, $code-font-family;
 
+/* ==================================================
+   3. CLS 优化 - 减少布局偏移
+   ================================================== */
+
+/* 为所有图片设置默认宽高，防止加载时布局偏移 */
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+/* 文章内图片容器预留空间 */
+.single .content img {
+    /* 为图片设置最小高度，防止加载时跳动 */
+    min-height: 100px;
+    background-color: var(--color-secondary-bg, #f5f5f5);
+    border-radius: 4px;
+}
+
+/* 优化字体加载过渡，减少 FOIT/FOUT 造成的偏移 */
+html {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 为文章列表项设置最小高度 */
+.home .home-posts .post-item {
+    min-height: 120px;
+}
+
+/* Header 固定高度，防止加载时偏移 */
+header.desktop {
+    height: 3.5rem;
+}
+
+/* ==================================================
+   4. FontAwesome 字体优化 - font-display: swap
+   ================================================== */
+/* 覆盖 FontAwesome 的 @font-face，添加 font-display: swap */
+/* 这样在字体加载时文本仍然可见，避免 FOIT (Flash of Invisible Text) */
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/lib/fontawesome-free/webfonts/fa-solid-900.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/lib/fontawesome-free/webfonts/fa-regular-400.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Font Awesome 6 Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/lib/fontawesome-free/webfonts/fa-brands-400.woff2') format('woff2');
+}

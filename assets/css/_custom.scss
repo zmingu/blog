@@ -15,6 +15,11 @@
     line-height: 0;
     border-radius: 50%;
 
+    /* CLS 优化：固定头像容器尺寸，防止加载时布局偏移 */
+    width: 6rem;
+    height: 6rem;
+    aspect-ratio: 1 / 1;
+
     /* 3D Context */
     perspective: 1000px;
     transform-style: preserve-3d;
