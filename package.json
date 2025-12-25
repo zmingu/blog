@@ -4,7 +4,7 @@
   "description": "振明的博客",
   "scripts": {
     "fetch:neodb": "node scripts/fetch-neodb-data.js",
-    "build": "npm run fetch:neodb && hugo --gc --minify",
+    "build": "npm run fetch:neodb && hugo",
     "server": "hugo server",
     "server:prod": "hugo server -e production"
   },
