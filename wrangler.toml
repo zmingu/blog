@@ -1,0 +1,15 @@
+# Cloudflare Pages 部署配置
+name = "zmingu-blog"
+pages_build_output_dir = "public"
+
+[build]
+command = "npm run build"
+
+[build.environment]
+HUGO_VERSION = "0.152.2"
+NODE_VERSION = "20"
+TZ = "Asia/Shanghai"
+
+# 开发环境可选设置
+[dev]
+port = 1313
