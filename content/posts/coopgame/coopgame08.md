@@ -1,5 +1,5 @@
 ---
-title: CoopGame08-游戏模式
+title: CoopGame08 - 游戏模式
 subtitle:
 date: 2022-10-20T19:31:00+08:00
 lastmod: 2024-05-28T19:30:00+08:00

@@ -1,5 +1,5 @@
 ---
-title: CoopGame09-进阶AI
+title: CoopGame09 - 进阶AI
 subtitle:
 date: 2022-10-25T20:48:00+08:00
 lastmod: 2024-05-28T20:47:00+08:00

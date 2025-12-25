@@ -1,5 +1,5 @@
 ---
-title: CoopGame04-伤与挂
+title: CoopGame04 - 伤与挂
 subtitle:
 date: 2022-10-04T17:43:00+08:00
 lastmod: 2024-05-26T15:22:00+08:00

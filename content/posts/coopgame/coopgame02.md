@@ -1,5 +1,5 @@
 ---
-title: CoopGame02-武器1
+title: CoopGame02 - 武器1
 subtitle:
 date: 2022-10-02T15:01:00+08:00
 lastmod: 2024-05-26T15:17:00+08:00
