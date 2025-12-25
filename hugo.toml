@@ -983,7 +983,7 @@ link = ""
 # CDN data file name, disabled by default ["jsdelivr.yml", "unpkg.yml", ...]
 # located in "themes/FixIt/assets/data/cdn/" directory
 # you can store your own data files in the same path under your project: "assets/data/cdn/"
-data = "jsdelivr.yml" # 使用 jsdelivr CDN 加载第三方库（包括 FontAwesome 字体）
+data = "zstatic.yml"  # 自定义 CDN 配置，优先使用字节跳动 zstatic（国内快）
 
 # Compatibility config (兼容性配置)
 [params.compatibility]
@@ -1095,7 +1095,7 @@ userId = ""      # Follow User ID
 # FixIt 0.3.17 | NEW Image config (图片优化配置)
 [params.image]
 cacheRemote = false # 是否缓存远程图片以进行优化 (需要 Hugo 扩展版)
-optimise = true # 是否开启图片自动调整大小和优化 (构建速度会变慢，但加载更快)
+optimise = false # 是否开启图片自动调整大小和优化 (构建速度会变慢，但加载更快)
 
 # FixIt 0.4.0 | NEW JSON Viewer config (JSON 查看器配置)
 # See https://github.com/Lruihao/json-viewer-element
