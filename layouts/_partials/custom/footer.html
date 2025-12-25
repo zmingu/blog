@@ -1,5 +1,5 @@
 <!-- 统计博客的总字数和文章总数 -->
-<section class="totalcount">
+<div class="totalcount" aria-label="博客统计">
     {{$scratch := newScratch}}
     {{ range (where .Site.Pages "Kind" "page" )}}
     {{$scratch.Add "total" .WordCount}}
@@ -13,4 +13,4 @@
     {{$formattedKWords := printf "%.1f" $totalKWords}}
 
     共书写了{{$formattedKWords}}k字·{{ len (where .Site.RegularPages "Section" "posts") }}篇文章
-</section>
+</div>

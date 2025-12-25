@@ -468,7 +468,7 @@ collection = "collections"  # 集合 = "collections"：自定义分类法，将 
 # FixIt 0.2.15 | 修改：FixIt 主题版本
 version = "0.3.X"  # 版本 = "0.3.X"：指定 FixIt 主题版本，例如 "0.2.X"、"0.2.15"、"v0.2.15" 等，用于兼容性和更新检查。
 
-description = "这是我的博客，关于一些技术笔记分享，日常分享，开发分享"   # 描述 = ""：站点描述，用于 SEO 元标签和 Open Graph。
+description = "振明的技术博客 - 分享虚幻引擎(UE5)游戏开发、VR/AR开发实战经验，以及C++编程技巧和日常开发心得。专注于游戏开发领域的技术笔记与教程分享。"   # 描述 = ""：站点描述，用于 SEO 元标签和 Open Graph。
 
 keywords = ["虚幻", "虚幻引擎", "UE", "UE4", "UE5", "Unreal", "游戏开发", "VR开发"]      # 关键词 = []：站点关键词数组，用于 SEO 元标签。
 
