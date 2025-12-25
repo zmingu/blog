@@ -983,7 +983,7 @@ link = ""
 # CDN data file name, disabled by default ["jsdelivr.yml", "unpkg.yml", ...]
 # located in "themes/FixIt/assets/data/cdn/" directory
 # you can store your own data files in the same path under your project: "assets/data/cdn/"
-data = ""        # CDN 数据文件名，默认禁用，支持自定义数据文件存放在 "assets/data/cdn/" 目录下
+data = "jsdelivr.yml" # 使用 jsdelivr CDN 加载第三方库（包括 FontAwesome 字体）
 
 # Compatibility config (兼容性配置)
 [params.compatibility]
