@@ -983,7 +983,7 @@ link = ""
 # CDN data file name, disabled by default ["jsdelivr.yml", "unpkg.yml", ...]
 # located in "themes/FixIt/assets/data/cdn/" directory
 # you can store your own data files in the same path under your project: "assets/data/cdn/"
-data = "zstatic.yml"  # 自定义 CDN 配置，优先使用字节跳动 zstatic（国内快）
+data = "jsdelivr.yml"  # 自定义 CDN 配置，优先使用字节跳动 zstatic（国内快）
 
 # Compatibility config (兼容性配置)
 [params.compatibility]
