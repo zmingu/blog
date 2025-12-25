@@ -14,7 +14,3 @@
 <noscript>
     <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css">
 </noscript>
-
-<!-- 打印样式表 - 仅在打印时加载 -->
-{{ $printCSS := resources.Get "css/print.css" | minify }}
-<link rel="stylesheet" href="{{ $printCSS.Permalink }}" media="print">
