@@ -95,7 +95,7 @@ menu:
 ---
 
 ### 📜 关于本站
-- 2025.10.24：跟换 [FixIt](https://vercel.com) 主题，部署于 [Vercel](https://vercel.com)，图片存储于自建 S3。
+- 2025.10.24：更换 [FixIt](https://vercel.com) 主题，部署于 [Vercel](https://vercel.com)，图片存储于自建 S3。
 - 2025.08.25：拥抱静态，拥抱`Hugo`。
 - 2025.04.08：网站数据迁移到本地服务器，数据无价，反代存在问题待修复。
 - 2024.11.19: 更换域名为`blog.zmingu.com`,数据库由`sqlite3`换成`mysql`。
