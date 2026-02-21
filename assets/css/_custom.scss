@@ -30,14 +30,11 @@ body:has(.page.home:not(.posts)) {
         background: transparent !important;
         backdrop-filter: none !important;
         box-shadow: none !important;
-        position: relative;
-        z-index: 10;
     }
 
     /* 主要内容区 */
     .wrapper {
         position: relative;
-        z-index: 1;
     }
 
     /* 页脚样式 */
