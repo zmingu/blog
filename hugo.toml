@@ -76,7 +76,7 @@ weight = 2 # 菜单排序权重，数字越小越靠前（左侧）。当前为 
 class = ""
 # 是否设置为草稿菜单项，其功能类似于草稿文章/页面
 draft = false
-# FixIt 0.2.16 | 新功能：向特定菜单项添加 FontAwesome 图标 
+# FixIt 0.2.16 | 新功能：向特定菜单项添加 FontAwesome 图标
 icon = "fa-solid fa-archive"
 # FixIt 0.2.16 | 新功能：设置菜单项类型，可选值：["mobile", "desktop"]，指定菜单项仅在移动端（mobile）或桌面端（desktop）显示。为空表示所有设备。
 type = ""
@@ -546,7 +546,7 @@ noFavicon = false
 svgFavicon = ""
 
 # 建议改成你博客的主色调
-iconColor = "#5bbad5" 
+iconColor = "#5bbad5"
 # Windows 8/10/11 开始菜单磁贴的背景颜色
 tileColor = "#da532c"
 
@@ -610,7 +610,7 @@ resultsPage = "/search/" # 搜索结果展示页面的路径
 
 # 页眉 (Header) 基础配置
 [params.header]
-  
+
 desktopMode = "auto" # 桌面端页眉模式 ["sticky" (始终固定在顶部), "normal" (随页面滚动消失), "auto" (上滑显示，下滑隐藏)]推荐使用 "auto" 以增加阅读空间，或者 "sticky" 方便导航
 
 mobileMode = "auto"  # 移动端屏幕小，强烈推荐 "auto", 移动端页眉模式 ["sticky", "normal", "auto"]
@@ -653,15 +653,15 @@ license = ""     # 许可协议信息 (支持 HTML，例如 '<a href="...">CC BY
 # 是否显示 "Powered by Hugo & FixIt
 [params.footer.powered]
 enable = false    # 是否开启推广信息显示
-hugoLogo = false  # 是否显示 Hugo 的 Logo 小图标
+hugoLogo = true  # 是否显示 Hugo 的 Logo 小图标
 themeLogo = false # 是否显示 FixIt 主题的 Logo 小图标
 
 # 网站运行时间统计
 [params.footer.siteTime]
 enable = false   # 是否在页脚显示 "网站已运行 XX 天" (建议开启，很有成就感)
-animate = false   # 是否开启秒数的跳动动画
+animate = true   # 是否开启秒数的跳动动画
 icon = "fa-solid fa-heartbeat" # 运行时间前的图标 (默认是心跳)
-pre = "已运行:"         # 时间前的描述文字 (例如 "博客已运行:")
+pre = "博客已运行:"         # 时间前的描述文字 (例如 "博客已运行:")
 value = "2020-01-01T16:15:22+08:00"       # 网站建站时间，必须严格按照此格式填写: "2021-12-18T16:15:22+08:00"
 
 # 页脚各组件的排序: ["first", 0, 1, 2, 3, 4, 5, "last"]
