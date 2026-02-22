@@ -83,6 +83,45 @@ menu:
   let currentPage = 1;
   let isLoading = false;
   let allData = {}; 
+  let hasMoreData = false;
+  let autoLoadArmed = true;
+  // 每页渲染数量：调大更顺滑但首屏更重
+  const ITEMS_PER_PAGE = 24;
+  // 距离底部多少提前触发加载（IntersectionObserver rootMargin）
+  const INFINITE_SCROLL_ROOT_MARGIN = '200px 0px';
+  const CACHE_CONFIG = {
+    prefix: 'neodb_cache_v1',
+    ttl: 6 * 60 * 60 * 1000
+  };
+
+  function getCacheKey(category, type) {
+    return `${CACHE_CONFIG.prefix}:${category}_${type}`;
+  }
+
+  function readCache(category, type) {
+    try {
+      const raw = localStorage.getItem(getCacheKey(category, type));
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || !Array.isArray(parsed.data)) return null;
+      return parsed;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function writeCache(category, type, data) {
+    try {
+      const payload = { ts: Date.now(), data: data || [] };
+      localStorage.setItem(getCacheKey(category, type), JSON.stringify(payload));
+    } catch (error) {
+      // localStorage 可能不可用或空间不足，静默失败即可
+    }
+  }
+
+  function isCacheFresh(ts) {
+    return typeof ts === 'number' && (Date.now() - ts) < CACHE_CONFIG.ttl;
+  }
 
   function generateNavButtons() {
     const navContainer = document.getElementById('neodb-nav');
@@ -104,7 +143,7 @@ menu:
     // 第一优先级：本地文件 (/data/neodb/)
     const localUrl = `/data/neodb/${category}_${type}.json`;
     try {
-      const response = await fetch(localUrl);
+      const response = await fetch(localUrl, { cache: 'force-cache' });
       if (response.ok) {
         const data = await response.json();
         const dataArray = Array.isArray(data) ? data : (data.data || []);
@@ -118,7 +157,7 @@ menu:
     // 第二优先级：jsDelivr CDN (GitHub 源)
     const cdnUrl = `https://cdn.jsdelivr.net/gh/zmingu/neodb-data@main/neodb/${category}_${type}.json`;
     try {
-      const response = await fetch(cdnUrl, { timeout: 5000 });
+      const response = await fetch(cdnUrl, { cache: 'force-cache' });
       if (response.ok) {
         const data = await response.json();
         const dataArray = Array.isArray(data) ? data : (data.data || []);
@@ -132,7 +171,7 @@ menu:
     // 第三优先级：GitHub Raw (备用)
     const githubUrl = `https://raw.githubusercontent.com/zmingu/neodb-data/main/neodb/${category}_${type}.json`;
     try {
-      const response = await fetch(githubUrl, { timeout: 5000 });
+      const response = await fetch(githubUrl, { cache: 'force-cache' });
       if (response.ok) {
         const data = await response.json();
         const dataArray = Array.isArray(data) ? data : (data.data || []);
@@ -197,10 +236,8 @@ menu:
   function renderGrid(data, page = 1, append = false) {
     const grid = document.getElementById('neodb-grid');
     if(!grid) return;
-    // 设置为 1000，确保一次性渲染完，不分页
-    const itemsPerPage = 1000;
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
+    const startIndex = append ? (page - 1) * ITEMS_PER_PAGE : 0;
+    const endIndex = page * ITEMS_PER_PAGE;
     const pageData = data.slice(startIndex, endIndex);
 
     if (!append) {
@@ -222,6 +259,35 @@ menu:
     });
   }
 
+  function triggerLoadMore() {
+    if (isLoading || !hasMoreData) return;
+    currentPage++;
+    loadData(currentCategory, currentType, currentPage, true);
+  }
+
+  function setupInfiniteScroll() {
+    const target = document.getElementById('neodb-load-more');
+    if (!target || !('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          autoLoadArmed = true;
+          return;
+        }
+        if (!autoLoadArmed) return;
+        if (isLoading || !hasMoreData) return;
+        autoLoadArmed = false;
+        triggerLoadMore();
+      });
+    }, { rootMargin: INFINITE_SCROLL_ROOT_MARGIN });
+    observer.observe(target);
+  }
+
+  function registerServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
+    navigator.serviceWorker.register('/sw-neodb.js', { scope: '/neodb/' }).catch(() => {});
+  }
+
   async function loadData(category, type, page = 1, append = false) {
     if (isLoading) return;
     isLoading = true;
@@ -233,22 +299,74 @@ menu:
       grid.innerHTML = '<div class="neodb-loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</div>';
       if(loadMoreBtn) loadMoreBtn.style.display = 'none';
       if(noMoreItems) noMoreItems.style.display = 'none';
+    } else {
+      if (loadMoreBtn) {
+        loadMoreBtn.disabled = true;
+        loadMoreBtn.textContent = '加载中...';
+      }
     }
 
     const cacheKey = `${category}_${type}`;
     if (!allData[cacheKey]) {
+      const cached = readCache(category, type);
+      if (cached && cached.data) {
+        allData[cacheKey] = cached.data;
+        renderGrid(cached.data, page, append);
+        const hasMore = cached.data.length > page * ITEMS_PER_PAGE;
+        hasMoreData = hasMore;
+        if (hasMore) {
+          if(loadMoreBtn) {
+            loadMoreBtn.style.display = 'inline-block';
+            loadMoreBtn.disabled = false;
+            loadMoreBtn.textContent = '加载更多';
+          }
+          if(noMoreItems) noMoreItems.style.display = 'none';
+        } else {
+          if(loadMoreBtn) loadMoreBtn.style.display = 'none';
+          if(noMoreItems) noMoreItems.style.display = 'block';
+        }
+        isLoading = false;
+        if (!isCacheFresh(cached.ts)) {
+          fetchNeoDBData(category, type).then(res => {
+            const freshData = res.data || [];
+            writeCache(category, type, freshData);
+            allData[cacheKey] = freshData;
+            if (category === currentCategory && type === currentType) {
+              renderGrid(freshData, currentPage, false);
+              const hasMore = freshData.length > currentPage * ITEMS_PER_PAGE;
+              hasMoreData = hasMore;
+              if (hasMore) {
+                if(loadMoreBtn) {
+                  loadMoreBtn.style.display = 'inline-block';
+                  loadMoreBtn.disabled = false;
+                  loadMoreBtn.textContent = '加载更多';
+                }
+                if(noMoreItems) noMoreItems.style.display = 'none';
+              } else {
+                if(loadMoreBtn) loadMoreBtn.style.display = 'none';
+                if(noMoreItems) noMoreItems.style.display = 'block';
+              }
+            }
+          }).catch(() => {});
+        }
+        return;
+      }
       const res = await fetchNeoDBData(category, type);
       allData[cacheKey] = res.data || [];
+      writeCache(category, type, allData[cacheKey]);
     }
 
     const data = allData[cacheKey];
     renderGrid(data, page, append);
 
-    // 设置为 1000，确保判断"是否还有更多"时逻辑正确
-    const itemsPerPage = 1000;
-    const hasMore = data.length > page * itemsPerPage;
+    const hasMore = data.length > page * ITEMS_PER_PAGE;
+    hasMoreData = hasMore;
     if (hasMore) {
-      if(loadMoreBtn) loadMoreBtn.style.display = 'inline-block';
+      if(loadMoreBtn) {
+        loadMoreBtn.style.display = 'inline-block';
+        loadMoreBtn.disabled = false;
+        loadMoreBtn.textContent = '加载更多';
+      }
       if(noMoreItems) noMoreItems.style.display = 'none';
     } else {
       if(loadMoreBtn) loadMoreBtn.style.display = 'none';
@@ -278,14 +396,21 @@ menu:
             loadData(currentCategory, currentType, 1, false);
         }
         if(e.target.id === 'load-more-btn') {
-            currentPage++;
-            loadData(currentCategory, currentType, currentPage, true);
+            triggerLoadMore();
         }
     });
+    setupInfiniteScroll();
     loadData(currentCategory, currentType, 1, false);
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      init();
+      registerServiceWorker();
+    });
+  } else {
+    init();
+    registerServiceWorker();
+  }
 })();
 </script>

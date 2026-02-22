@@ -105,6 +105,5 @@ development.toml
 /.obsidian/workspace.json
 /hugo_stats.json
 
-# NeoDB 数据文件：版本控制，作为本地备份
-# 注意：这些文件由 fetch:neodb 脚本自动更新
-# !/static/data/neodb/*.json
+# NeoDB 数据文件：由 fetch:neodb 脚本自动更新，避免提交
+/static/data/neodb/*.json

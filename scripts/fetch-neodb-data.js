@@ -17,6 +17,10 @@ const TYPES = ['complete', 'progress', 'wishlist'];
 const DATA_DIR = path.join(__dirname, '../static/data/neodb');
 const MAX_RETRIES = 3;
 const TIMEOUT = 10000; // 10 seconds
+const OUTPUT_OPTIONS = {
+  minify: true,
+  trimFields: true
+};
 
 // 确保目录存在
 if (!fs.existsSync(DATA_DIR)) {
@@ -65,9 +69,43 @@ function downloadFile(url, retries = MAX_RETRIES) {
 /**
  * 保存 JSON 数据到本地文件
  */
+function toArray(data) {
+  if (Array.isArray(data)) return data;
+  if (data && Array.isArray(data.data)) return data.data;
+  return [];
+}
+
+function trimRecord(record) {
+  const safeRecord = record || {};
+  const item = safeRecord.item || safeRecord;
+  return {
+    rating_grade: safeRecord.rating_grade,
+    created_time: safeRecord.created_time,
+    created_at: safeRecord.created_at,
+    item: {
+      cover_image_url: item.cover_image_url,
+      image: item.image,
+      rating: item.rating,
+      id: item.id,
+      url: item.url,
+      title: item.title,
+      display_title: item.display_title
+    }
+  };
+}
+
+function normalizeData(data) {
+  const list = toArray(data);
+  if (!OUTPUT_OPTIONS.trimFields) return list;
+  return list.map(trimRecord);
+}
+
 function saveFile(filename, data) {
   const filePath = path.join(DATA_DIR, filename);
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+  const json = OUTPUT_OPTIONS.minify
+    ? JSON.stringify(data)
+    : JSON.stringify(data, null, 2);
+  fs.writeFileSync(filePath, json);
   return filePath;
 }
 
@@ -89,9 +127,9 @@ async function main() {
       try {
         process.stdout.write(`  ⏳ 下载 ${filename}... `);
         const data = await downloadFile(url);
-        const savedPath = saveFile(filename, data);
-        // 处理数组和对象两种情况
-        const count = Array.isArray(data) ? data.length : (data.data ? data.data.length : Object.keys(data).length);
+        const normalized = normalizeData(data);
+        const savedPath = saveFile(filename, normalized);
+        const count = normalized.length;
         console.log(`✅ 成功 (${count} 条数据)`);
         successCount++;
       } catch (error) {
