@@ -1,16 +1,16 @@
 ---
-title: "2022暑期实训结训项目-《意志7》"
+title: 2022暑期实训结训项目-《意志7》
 subtitle:
 date: 2022-08-03T22:16:00+08:00
 lastmod: 2025-04-16T14:56:53+08:00
 slug: yizhi7
 draft: false
-summary: "2022 暑期实训团队项目《意志7》，获优秀作品和最佳人气奖，参展世界 VR 产业大会。"
+summary: 2022 暑期实训团队项目《意志7》，获优秀作品和最佳人气奖，参展世界 VR 产业大会。
 keywords:
   - yizhi7
   - 毕业设计
   - 世界VR产业大会
-weight: 0
+weight: 1
 tags:
   - 虚幻引擎项目
 categories:
@@ -18,14 +18,18 @@ categories:
 toc: true
 collections:
   - ue-projects
+featuredImage: /images/cover_yizhi7.webp
 ---
+今天在公众号得知我的小黄人头显再次抢占C位啦，同时昨天下午借助现场环境，我们小组成员终于有了自己的第一次合照，像个游戏发布会，有点那味了。
+
+弥补了合影留念的遗憾.对于这阵子的活动，也算圆满结束啦，希望接下来能往更好的方向走，团队已经准备将意志7作为毕设继续重写和完善，期待最终的成果。
+
+![[blog/static/images/1.png]]
+![[blog/static/images/2.png]]
 # 简介
 - 项目介绍：2022暑期实训团队项目。
-
 - 获奖情况：结训评选优秀作品（15%），最佳人气作品（1%）。
-
 - 试玩地点：2022世界VR产业大会江西财经大学展区。
-
 # 视频展示
 ## 游戏宣传视频
 
@@ -36,6 +40,10 @@ collections:
 
 ## 游戏流程（做加速处理）
 {{<bilibili BV1DG411c7Yn >}}
+
+## 体验者们
+{{<bilibili BV1vG4y1f72F >}}
+
 # 官网及下载地址
 
 游戏官网：[Willpower7](https://w7.zmingu.com)

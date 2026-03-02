@@ -3,7 +3,7 @@
    ================================================== */
 
 /* 首页时在 body 上添加背景图 - 默认使用亮色背景 */
-body:has(.page.home:not(.posts)) {
+body:has(.page.home) {
     /* 默认使用亮色背景图（适配默认/亮色模式） */
     background-image: url('/images/bg_a.webp');
     background-size: cover;
@@ -30,11 +30,14 @@ body:has(.page.home:not(.posts)) {
         background: transparent !important;
         backdrop-filter: none !important;
         box-shadow: none !important;
+        position: relative;
+        z-index: 10;
     }
 
     /* 主要内容区 */
     .wrapper {
         position: relative;
+        z-index: 1;
     }
 
     /* 页脚样式 */
@@ -49,7 +52,7 @@ body:has(.page.home:not(.posts)) {
 }
 
 /* 暗色模式使用不同的背景图 */
-[data-theme="dark"] body:has(.page.home:not(.posts)) {
+[data-theme="dark"] body:has(.page.home) {
     background-image: url('/images/bg.webp');
 
     /* 暗色模式用深色遮罩 */
@@ -59,7 +62,7 @@ body:has(.page.home:not(.posts)) {
 }
 
 /* 首页内容样式 */
-.page.home:not(.posts) {
+.page.home {
     min-height: auto;
     background: transparent;
     padding-bottom: 2rem;
@@ -85,6 +88,30 @@ body:has(.page.home:not(.posts)) {
             color: #fff;
         }
     }
+
+    /* 文章列表卡片样式 - 在背景图上显示 */
+    &.posts {
+        .single.summary {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .featured-image-preview {
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+/* 暗色模式下文章卡片样式 */
+[data-theme="dark"] .page.home.posts .single.summary {
+    background: rgba(30, 30, 30, 0.85);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* ==================================================

@@ -653,15 +653,15 @@ license = ""     # 许可协议信息 (支持 HTML，例如 '<a href="...">CC BY
 # 是否显示 "Powered by Hugo & FixIt
 [params.footer.powered]
 enable = false    # 是否开启推广信息显示
-hugoLogo = true  # 是否显示 Hugo 的 Logo 小图标
+hugoLogo = false  # 是否显示 Hugo 的 Logo 小图标
 themeLogo = false # 是否显示 FixIt 主题的 Logo 小图标
 
 # 网站运行时间统计
 [params.footer.siteTime]
 enable = false   # 是否在页脚显示 "网站已运行 XX 天" (建议开启，很有成就感)
-animate = true   # 是否开启秒数的跳动动画
+animate = false   # 是否开启秒数的跳动动画
 icon = "fa-solid fa-heartbeat" # 运行时间前的图标 (默认是心跳)
-pre = "博客已运行:"         # 时间前的描述文字 (例如 "博客已运行:")
+pre = "已运行:"         # 时间前的描述文字 (例如 "博客已运行:")
 value = "2020-01-01T16:15:22+08:00"       # 网站建站时间，必须严格按照此格式填写: "2021-12-18T16:15:22+08:00"
 
 # 页脚各组件的排序: ["first", 0, 1, 2, 3, 4, 5, "last"]
@@ -730,7 +730,7 @@ disclaimer = ""          # 免责声明或额外文字 (显示在社交图标下
 
 # 主页文章列表配置
 [params.home.posts]
-enable = false           # 关闭首页文章列表，只显示个人信息
+enable = true           # 关闭首页文章列表，只显示个人信息
 paginate = 6             # 主页每页显示的文章数量 (建议 6-10 篇)
 
 # 社交链接配置
