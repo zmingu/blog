@@ -73,12 +73,12 @@ tools/add_frontmatter_backups/
 /_vendor/
 
 # 主题文件 (如果使用 git submodule 管理主题)
-themes/* (如果不想版本控制主题文件可以取消注释)
+# themes/* (如果不想版本控制主题文件可以取消注释)
 
 /_vendor/
 
 # 主题文件 (如果使用 git submodule 管理主题)
-themes/* (如果不想版本控制主题文件可以取消注释)
+# themes/* (如果不想版本控制主题文件可以取消注释)
 
 # 部署相关文件
 .deploy_git/

@@ -24,8 +24,8 @@ featuredImage: /images/cover_yizhi7.webp
 
 弥补了合影留念的遗憾.对于这阵子的活动，也算圆满结束啦，希望接下来能往更好的方向走，团队已经准备将意志7作为毕设继续重写和完善，期待最终的成果。
 
-![[blog/static/images/1.png]]
-![[blog/static/images/2.png]]
+![[blog/static/images/1-tuya.webp]]
+![[blog/static/images/2-tuya.webp]]
 # 简介
 - 项目介绍：2022暑期实训团队项目。
 - 获奖情况：结训评选优秀作品（15%），最佳人气作品（1%）。

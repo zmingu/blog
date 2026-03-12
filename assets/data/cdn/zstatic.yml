@@ -4,14 +4,14 @@
 prefix:
   libFiles: 
   # simple-icons@9.19.0 https://github.com/simple-icons/simple-icons
-  simpleIcons: https://s4.zstatic.net/ajax/libs/simple-icons/9.19.0/
+  simpleIcons: https://cdn.jsdelivr.net/npm/simple-icons@9.19.0/
 libFiles:
   # algoliasearch@4.20.0 https://github.com/algolia/algoliasearch-client-javascript
   algoliasearchJS: https://s4.zstatic.net/ajax/libs/algoliasearch/4.20.0/algoliasearch.umd.min.js
   # animate.css@4.1.1 https://github.com/daneden/animate.css
   animateCSS: https://s4.zstatic.net/ajax/libs/animate.css/4.1.1/animate.min.css
   # aplayer@1.10.1 https://github.com/MoePlayer/APlayer
-  aplayerCSS: https://s4.zstatic.net/ajax/libs/aplayer/1.10.1/dist/APlayer.min.css
+  aplayerCSS: https://s4.zstatic.net/ajax/libs/aplayer/1.10.1/APlayer.min.css
   aplayerJS: https://s4.zstatic.net/ajax/libs/aplayer/1.10.1/APlayer.min.js
   # artalk@latest https://github.com/ArtalkJS/Artalk
   artalkCSS: https://s4.zstatic.net/ajax/libs/artalk/2.9.1/Artalk.css
@@ -23,7 +23,7 @@ libFiles:
   cellWatermarkJS: https://cdn.jsdelivr.net/npm/cell-watermark@1.0.3/src/watermark.min.js
   # cookieconsent@3.1.1 https://github.com/osano/cookieconsent
   cookieconsentCSS: https://s4.zstatic.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css
-  cookieconsentJS: https://s4.zstatic.net/ajax/libs/ccookieconsent/3.1.1/cookieconsent.min.js
+  cookieconsentJS: https://s4.zstatic.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js
   # crypto-js@4.2.0 https://github.com/brix/crypto-js
   cryptoCoreJS: https://s4.zstatic.net/ajax/libs/crypto-js/4.2.0/core.js
   cryptoEncBase64JS: https://s4.zstatic.net/ajax/libs/crypto-js/4.2.0/enc-base64.js

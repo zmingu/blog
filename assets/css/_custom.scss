@@ -25,19 +25,21 @@ body:has(.page.home) {
     }
 
     /* 菜单栏透明 */
+    /* 注意：z-index 必须大于蒙版 #mask 在 body.blur 时的 z-index(100)，
+       否则移动端菜单展开后，点击子项会被蒙版拦截导致无法跳转 */
     #header-desktop,
     #header-mobile {
         background: transparent !important;
         backdrop-filter: none !important;
         box-shadow: none !important;
         position: relative;
-        z-index: 10;
+        z-index: 200;
     }
 
     /* 主要内容区 */
     .wrapper {
         position: relative;
-        z-index: 1;
+        z-index: 150;
     }
 
     /* 页脚样式 */
