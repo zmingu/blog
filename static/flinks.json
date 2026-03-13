@@ -8,6 +8,12 @@
         "url": "https://blog.alttt.com/",
         "avatar": "https://blog.alttt.com/img/favicon.ico",
         "description": " 记录每一天的点点滴滴"
+      },
+      {
+        "name": "Eric-Terminal 的博客",
+        "url": "https://blog.ericterminal.com/",
+        "avatar": "https://assets.ericterminal.com/logo-transparent.png",
+        "description": "未雨绸缪，方能临危不乱。"
       }
     ]
   },
