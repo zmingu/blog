@@ -72,14 +72,14 @@ menu:
 /* 头像 */
 .friend-left { margin-right: 15px; flex-shrink: 0; }
 .friend-avatar {
-    width: 64px; height: 64px; border-radius: 50%; 
+    width: 64px !important; height: 64px !important; border-radius: 50% !important;
     border: 2px solid var(--fixit-border-color);
     object-fit: cover; transition: transform 0.5s ease;
     background-color: #fff; display: block;
 }
-.friend-card:hover .friend-avatar { 
-    transform: rotate(360deg); 
-    border-color: var(--fixit-color-primary); 
+.friend-card:hover .friend-avatar {
+    transform: rotate(360deg);
+    border-color: var(--fixit-color-primary);
 }
 
 /* 文字信息 */
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const itemsHtml = group.items.map(item => `
                 <a class="friend-card" target="_blank" href="${item.url}" title="${item.description}">
                     <div class="friend-left">
-                        <img class="friend-avatar" src="${item.avatar}" alt="${item.name}" loading="lazy" onerror="this.src='/fixit.min.svg'">
+                        <img class="friend-avatar" src="${item.avatar}" alt="${item.name}" onerror="this.onerror=null;this.src='/images/fixit.min.svg'">
                     </div>
                     <div class="friend-right">
                         <div class="friend-name">${item.name}</div>
